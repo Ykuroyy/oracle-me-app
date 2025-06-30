@@ -4323,3 +4323,376 @@ Processing by OracleCardsController#show as HTML
 Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 2621)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (32.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "oracle_me_app_development"[0m
+  [1m[35m (18.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "oracle_me_app_test"[0m
+  [1m[35m (85.5ms)[0m  [1m[35mCREATE DATABASE "oracle_me_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (36.0ms)[0m  [1m[35mCREATE DATABASE "oracle_me_app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "aroma_cards" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "aroma_cards" ("id" bigserial primary key, "title" character varying, "description" text, "message" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "aromas" CASCADE[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "aromas" ("id" bigserial primary key, "name" character varying, "keyword" character varying, "message" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "oracle_cards" CASCADE[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "oracle_cards" ("id" bigserial primary key, "number" integer, "title" character varying, "description" text, "message" text, "image_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250630172617)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250630093605);[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-06-30 23:52:20.836087', '2025-06-30 23:52:20.836089') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '5fd233c3cf5c1b99d2e11687866a3cf017e9a929', '2025-06-30 23:52:20.837278', '2025-06-30 23:52:20.837279') RETURNING "key"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "aroma_cards" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "aroma_cards" ("id" bigserial primary key, "title" character varying, "description" text, "message" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "aromas" CASCADE[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "aromas" ("id" bigserial primary key, "name" character varying, "keyword" character varying, "message" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "oracle_cards" CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "oracle_cards" ("id" bigserial primary key, "number" integer, "title" character varying, "description" text, "message" text, "image_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250630172617)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250630093605);[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-06-30 23:52:20.857063', '2025-06-30 23:52:20.857065') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-06-30 23:52:20.857865' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '5fd233c3cf5c1b99d2e11687866a3cf017e9a929', '2025-06-30 23:52:20.858684', '2025-06-30 23:52:20.858685') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.7ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 0], ["title", "愚者"], ["description", "新しい始まりと冒険"], ["message", "今日は新しいことに挑戦するのに最適な日です。恐れずに一歩を踏み出しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.875809"], ["updated_at", "2025-06-30 23:52:20.875809"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 1], ["title", "魔術師"], ["description", "創造力と意志の力"], ["message", "あなたには無限の可能性があります。自分の力を信じて、目標に向かって進みましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.877448"], ["updated_at", "2025-06-30 23:52:20.877448"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.6ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 2], ["title", "女教皇"], ["description", "直感と神秘的な知識"], ["message", "あなたの直感を信じてください。内なる声が正しい道を示してくれます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.878398"], ["updated_at", "2025-06-30 23:52:20.878398"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 3], ["title", "女帝"], ["description", "豊かさと母性"], ["message", "今日は豊かさと恵みに満ちた日です。周りの人々に優しさを分け与えましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.879743"], ["updated_at", "2025-06-30 23:52:20.879743"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 4], ["title", "皇帝"], ["description", "権威とリーダーシップ"], ["message", "あなたのリーダーシップが求められています。自信を持って決断を下しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.880824"], ["updated_at", "2025-06-30 23:52:20.880824"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 5], ["title", "教皇"], ["description", "伝統と精神的な導き"], ["message", "伝統的な価値観や精神的な導きに従うことで、正しい道を見つけられます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.881766"], ["updated_at", "2025-06-30 23:52:20.881766"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.5ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 6], ["title", "恋人"], ["description", "愛と選択"], ["message", "愛と調和の日です。大切な人との関係を深め、正しい選択をしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.882670"], ["updated_at", "2025-06-30 23:52:20.882670"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 7], ["title", "戦車"], ["description", "勝利と意志の力"], ["message", "困難を乗り越えて勝利を掴む日です。強い意志を持って進みましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.883854"], ["updated_at", "2025-06-30 23:52:20.883854"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 8], ["title", "力"], ["description", "内なる強さと勇気"], ["message", "あなたの内なる強さを信じてください。勇気を持って困難に立ち向かいましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.884777"], ["updated_at", "2025-06-30 23:52:20.884777"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 9], ["title", "隠者"], ["description", "内省と孤独"], ["message", "一人の時間を大切にし、自分自身と向き合うことで真の答えを見つけられます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.885669"], ["updated_at", "2025-06-30 23:52:20.885669"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 10], ["title", "運命の輪"], ["description", "変化と運命"], ["message", "人生は常に変化しています。変化を受け入れ、新しい機会を掴みましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.886603"], ["updated_at", "2025-06-30 23:52:20.886603"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 11], ["title", "正義"], ["description", "バランスと公正"], ["message", "公平さと正義を大切にする日です。バランスの取れた判断を心がけましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.887504"], ["updated_at", "2025-06-30 23:52:20.887504"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 12], ["title", "吊るされた人"], ["description", "犠牲と新しい視点"], ["message", "時には立ち止まって、物事を別の角度から見ることで新しい発見があります。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.889943"], ["updated_at", "2025-06-30 23:52:20.889943"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.7ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 13], ["title", "死神"], ["description", "終わりと新しい始まり"], ["message", "古いものを手放し、新しい始まりを受け入れましょう。変化は成長の証です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.890846"], ["updated_at", "2025-06-30 23:52:20.890846"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 14], ["title", "節制"], ["description", "調和とバランス"], ["message", "バランスの取れた生活を心がけましょう。調和があなたに平安をもたらします。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.892094"], ["updated_at", "2025-06-30 23:52:20.892094"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 15], ["title", "悪魔"], ["description", "誘惑と物質的な欲望"], ["message", "物質的な誘惑に注意しましょう。本当に大切なものを見失わないでください。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.893360"], ["updated_at", "2025-06-30 23:52:20.893360"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 16], ["title", "塔"], ["description", "突然の変化と啓示"], ["message", "突然の変化が訪れるかもしれません。それを受け入れ、新しい視点を得ましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.894236"], ["updated_at", "2025-06-30 23:52:20.894236"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 17], ["title", "星"], ["description", "希望と癒し"], ["message", "希望の星があなたを導いています。夢を信じて、癒しの時を過ごしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.895339"], ["updated_at", "2025-06-30 23:52:20.895339"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 18], ["title", "月"], ["description", "直感と幻想"], ["message", "直感を信じてください。月の光が真実を照らしてくれます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.896238"], ["updated_at", "2025-06-30 23:52:20.896238"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 19], ["title", "太陽"], ["description", "成功と喜び"], ["message", "明るく輝く太陽のような日です。成功と喜びに満ちた時間を過ごしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.897254"], ["updated_at", "2025-06-30 23:52:20.897254"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 20], ["title", "審判"], ["description", "復活と再生"], ["message", "新しい人生の章が始まります。過去を清算し、新しい自分に生まれ変わりましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.898223"], ["updated_at", "2025-06-30 23:52:20.898223"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 21], ["title", "世界"], ["description", "完成と達成"], ["message", "あなたの努力が実を結ぶ日です。目標を達成し、完全な調和を感じられるでしょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.899077"], ["updated_at", "2025-06-30 23:52:20.899077"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 22], ["title", "道化師"], ["description", "自由と冒険"], ["message", "自由な心で冒険を楽しみましょう。制約にとらわれず、自分の道を進んでください。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.900085"], ["updated_at", "2025-06-30 23:52:20.900085"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 23], ["title", "賢者"], ["description", "知恵と洞察"], ["message", "深い洞察力があなたを導きます。知恵を活かして正しい判断を下しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.901099"], ["updated_at", "2025-06-30 23:52:20.901099"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 24], ["title", "癒し手"], ["description", "癒しと奉仕"], ["message", "あなたの優しさが他の人を癒します。奉仕の心で周りの人を助けましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.901950"], ["updated_at", "2025-06-30 23:52:20.901950"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 25], ["title", "創造者"], ["description", "創造と表現"], ["message", "あなたの創造性が花開く日です。新しいアイデアを形にしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.902925"], ["updated_at", "2025-06-30 23:52:20.902925"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 26], ["title", "調停者"], ["description", "調和と和解"], ["message", "対立を調停し、調和をもたらす力があります。平和な解決を目指しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.903962"], ["updated_at", "2025-06-30 23:52:20.903962"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 27], ["title", "探求者"], ["description", "探求と発見"], ["message", "新しい知識や経験を求めて探求する日です。好奇心を大切にしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.904896"], ["updated_at", "2025-06-30 23:52:20.904896"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.5ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 28], ["title", "守護者"], ["description", "保護と安全"], ["message", "あなたの守護力が大切なものを守ります。安全と安心を提供しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.906033"], ["updated_at", "2025-06-30 23:52:20.906033"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.6ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 29], ["title", "変革者"], ["description", "変革と進化"], ["message", "大きな変革の時です。古いものを手放し、新しい自分に進化しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.907379"], ["updated_at", "2025-06-30 23:52:20.907379"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (2.2ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 30], ["title", "統合者"], ["description", "統合と完全性"], ["message", "すべての要素を統合し、完全な調和を実現する日です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.910251"], ["updated_at", "2025-06-30 23:52:20.910251"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (7.9ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 31], ["title", "啓示者"], ["description", "啓示と悟り"], ["message", "深い啓示を受け取る日です。真実が明らかになり、新しい理解を得られるでしょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.916169"], ["updated_at", "2025-06-30 23:52:20.916169"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 32], ["title", "超越者"], ["description", "超越と解放"], ["message", "物質的な制約を超越し、精神的な自由を体験する日です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.925457"], ["updated_at", "2025-06-30 23:52:20.925457"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.3ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 33], ["title", "完成者"], ["description", "完成と成就"], ["message", "あなたの人生の一つのサイクルが完成します。すべての努力が報われる日です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:20.926797"], ["updated_at", "2025-06-30 23:52:20.926797"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (34.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "oracle_me_app_development"[0m
+  [1m[35m (12.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "oracle_me_app_test"[0m
+  [1m[35m (77.9ms)[0m  [1m[35mCREATE DATABASE "oracle_me_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (34.1ms)[0m  [1m[35mCREATE DATABASE "oracle_me_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2729458567012836540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-06-30 23:52:49.603817', '2025-06-30 23:52:49.603819') RETURNING "key"[0m
+Migrating to CreateOracleCards (20250630093605)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "oracle_cards" ("id" bigserial primary key, "number" integer, "title" character varying, "description" text, "message" text, "image_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250630093605') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2729458567012836540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mOracleCard Load (0.5ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.8ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 0], ["title", "愚者"], ["description", "新しい始まりと冒険"], ["message", "今日は新しいことに挑戦するのに最適な日です。恐れずに一歩を踏み出しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.190616"], ["updated_at", "2025-06-30 23:52:56.190616"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.5ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 1], ["title", "魔術師"], ["description", "創造力と意志の力"], ["message", "あなたには無限の可能性があります。自分の力を信じて、目標に向かって進みましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.192560"], ["updated_at", "2025-06-30 23:52:56.192560"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 2], ["title", "女教皇"], ["description", "直感と神秘的な知識"], ["message", "あなたの直感を信じてください。内なる声が正しい道を示してくれます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.193865"], ["updated_at", "2025-06-30 23:52:56.193865"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 3], ["title", "女帝"], ["description", "豊かさと母性"], ["message", "今日は豊かさと恵みに満ちた日です。周りの人々に優しさを分け与えましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.194920"], ["updated_at", "2025-06-30 23:52:56.194920"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 4], ["title", "皇帝"], ["description", "権威とリーダーシップ"], ["message", "あなたのリーダーシップが求められています。自信を持って決断を下しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.195981"], ["updated_at", "2025-06-30 23:52:56.195981"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 5], ["title", "教皇"], ["description", "伝統と精神的な導き"], ["message", "伝統的な価値観や精神的な導きに従うことで、正しい道を見つけられます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.197039"], ["updated_at", "2025-06-30 23:52:56.197039"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.5ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 6], ["title", "恋人"], ["description", "愛と選択"], ["message", "愛と調和の日です。大切な人との関係を深め、正しい選択をしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.198118"], ["updated_at", "2025-06-30 23:52:56.198118"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 7], ["title", "戦車"], ["description", "勝利と意志の力"], ["message", "困難を乗り越えて勝利を掴む日です。強い意志を持って進みましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.199199"], ["updated_at", "2025-06-30 23:52:56.199199"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 8], ["title", "力"], ["description", "内なる強さと勇気"], ["message", "あなたの内なる強さを信じてください。勇気を持って困難に立ち向かいましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.200218"], ["updated_at", "2025-06-30 23:52:56.200218"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 9], ["title", "隠者"], ["description", "内省と孤独"], ["message", "一人の時間を大切にし、自分自身と向き合うことで真の答えを見つけられます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.201209"], ["updated_at", "2025-06-30 23:52:56.201209"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 10], ["title", "運命の輪"], ["description", "変化と運命"], ["message", "人生は常に変化しています。変化を受け入れ、新しい機会を掴みましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.202377"], ["updated_at", "2025-06-30 23:52:56.202377"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 11], ["title", "正義"], ["description", "バランスと公正"], ["message", "公平さと正義を大切にする日です。バランスの取れた判断を心がけましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.203485"], ["updated_at", "2025-06-30 23:52:56.203485"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (3.8ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 12], ["title", "吊るされた人"], ["description", "犠牲と新しい視点"], ["message", "時には立ち止まって、物事を別の角度から見ることで新しい発見があります。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.204599"], ["updated_at", "2025-06-30 23:52:56.204599"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 13], ["title", "死神"], ["description", "終わりと新しい始まり"], ["message", "古いものを手放し、新しい始まりを受け入れましょう。変化は成長の証です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.209142"], ["updated_at", "2025-06-30 23:52:56.209142"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 14], ["title", "節制"], ["description", "調和とバランス"], ["message", "バランスの取れた生活を心がけましょう。調和があなたに平安をもたらします。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.210575"], ["updated_at", "2025-06-30 23:52:56.210575"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.8ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 15], ["title", "悪魔"], ["description", "誘惑と物質的な欲望"], ["message", "物質的な誘惑に注意しましょう。本当に大切なものを見失わないでください。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.211594"], ["updated_at", "2025-06-30 23:52:56.211594"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 16], ["title", "塔"], ["description", "突然の変化と啓示"], ["message", "突然の変化が訪れるかもしれません。それを受け入れ、新しい視点を得ましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.213099"], ["updated_at", "2025-06-30 23:52:56.213099"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 17], ["title", "星"], ["description", "希望と癒し"], ["message", "希望の星があなたを導いています。夢を信じて、癒しの時を過ごしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.214178"], ["updated_at", "2025-06-30 23:52:56.214178"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 18], ["title", "月"], ["description", "直感と幻想"], ["message", "直感を信じてください。月の光が真実を照らしてくれます。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.215524"], ["updated_at", "2025-06-30 23:52:56.215524"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 19], ["title", "太陽"], ["description", "成功と喜び"], ["message", "明るく輝く太陽のような日です。成功と喜びに満ちた時間を過ごしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.216856"], ["updated_at", "2025-06-30 23:52:56.216856"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 20], ["title", "審判"], ["description", "復活と再生"], ["message", "新しい人生の章が始まります。過去を清算し、新しい自分に生まれ変わりましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.217886"], ["updated_at", "2025-06-30 23:52:56.217886"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 21], ["title", "世界"], ["description", "完成と達成"], ["message", "あなたの努力が実を結ぶ日です。目標を達成し、完全な調和を感じられるでしょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.219121"], ["updated_at", "2025-06-30 23:52:56.219121"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 22], ["title", "道化師"], ["description", "自由と冒険"], ["message", "自由な心で冒険を楽しみましょう。制約にとらわれず、自分の道を進んでください。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.220145"], ["updated_at", "2025-06-30 23:52:56.220145"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 23], ["title", "賢者"], ["description", "知恵と洞察"], ["message", "深い洞察力があなたを導きます。知恵を活かして正しい判断を下しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.221303"], ["updated_at", "2025-06-30 23:52:56.221303"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 24], ["title", "癒し手"], ["description", "癒しと奉仕"], ["message", "あなたの優しさが他の人を癒します。奉仕の心で周りの人を助けましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.222494"], ["updated_at", "2025-06-30 23:52:56.222494"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 25], ["title", "創造者"], ["description", "創造と表現"], ["message", "あなたの創造性が花開く日です。新しいアイデアを形にしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.223562"], ["updated_at", "2025-06-30 23:52:56.223562"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.6ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 26], ["title", "調停者"], ["description", "調和と和解"], ["message", "対立を調停し、調和をもたらす力があります。平和な解決を目指しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.224794"], ["updated_at", "2025-06-30 23:52:56.224794"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.6ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 27], ["title", "探求者"], ["description", "探求と発見"], ["message", "新しい知識や経験を求めて探求する日です。好奇心を大切にしましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.226183"], ["updated_at", "2025-06-30 23:52:56.226183"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.5ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 28], ["title", "守護者"], ["description", "保護と安全"], ["message", "あなたの守護力が大切なものを守ります。安全と安心を提供しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.227782"], ["updated_at", "2025-06-30 23:52:56.227782"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (2.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 29], ["title", "変革者"], ["description", "変革と進化"], ["message", "大きな変革の時です。古いものを手放し、新しい自分に進化しましょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.229858"], ["updated_at", "2025-06-30 23:52:56.229858"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (7.1ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 30], ["title", "統合者"], ["description", "統合と完全性"], ["message", "すべての要素を統合し、完全な調和を実現する日です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.236698"], ["updated_at", "2025-06-30 23:52:56.236698"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.5ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 31], ["title", "啓示者"], ["description", "啓示と悟り"], ["message", "深い啓示を受け取る日です。真実が明らかになり、新しい理解を得られるでしょう。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.245324"], ["updated_at", "2025-06-30 23:52:56.245324"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.4ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 32], ["title", "超越者"], ["description", "超越と解放"], ["message", "物質的な制約を超越し、精神的な自由を体験する日です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.246821"], ["updated_at", "2025-06-30 23:52:56.246821"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOracleCard Create (0.8ms)[0m  [1m[32mINSERT INTO "oracle_cards" ("number", "title", "description", "message", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["number", 33], ["title", "完成者"], ["description", "完成と成就"], ["message", "あなたの人生の一つのサイクルが完成します。すべての努力が報われる日です。"], ["image_url", nil], ["created_at", "2025-06-30 23:52:56.247880"], ["updated_at", "2025-06-30 23:52:56.247880"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2025-07-01 08:53:19 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 2199)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 40390)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 44473)
+
+
+Started GET "/oracle-me/oracle_cards/8" for ::1 at 2025-07-01 08:53:20 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 8], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 559)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2398)
+Completed 200 OK in 38ms (Views: 5.1ms | ActiveRecord: 9.2ms | Allocations: 20905)
+
+
+Started GET "/oracle-me/oracle_cards/6" for ::1 at 2025-07-01 08:53:20 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 6], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1951)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 2631)
+
+
+Started GET "/oracle-me/oracle_cards/33" for ::1 at 2025-07-01 08:53:21 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 33], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1915)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 2593)
+
+
+Started GET "/oracle-me/oracle_cards/16" for ::1 at 2025-07-01 08:53:21 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 16], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1949)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 2627)
+
+
+Started GET "/oracle-me/oracle_cards/13" for ::1 at 2025-07-01 08:53:22 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 13], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1940)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 2630)
+
+
+Started GET "/oracle-me/oracle_cards/26" for ::1 at 2025-07-01 08:53:22 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 26], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1930)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 2620)
+
+
+Started GET "/oracle-me/oracle_cards/23" for ::1 at 2025-07-01 08:53:23 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 23], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1956)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 2640)
+
+

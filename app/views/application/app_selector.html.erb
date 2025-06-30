@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>アプリ選択 - Multi App Hub</title>
+  <title>Oracle Me - オラクルカードアプリ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -15,61 +15,47 @@
     <!-- ヘッダー -->
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold text-gray-800 mb-4">
-        🌟 Multi App Hub
+        🔮 Oracle Me
       </h1>
       <p class="text-lg text-gray-600">
-        あなたのアプリコレクション
+        あなたのオラクルカードアプリ
       </p>
     </div>
 
-    <!-- アプリグリッド -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <% @apps.each do |app| %>
-        <div class="group">
-          <a href="<%= app[:path] %>" class="block">
-            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 border border-gray-100">
-              <!-- アプリアイコン -->
-              <div class="text-center mb-4">
-                <div class="text-4xl mb-2">
-                  <%= app[:icon] %>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                  <%= app[:name] %>
-                </h3>
-                <p class="text-gray-600 text-sm">
-                  <%= app[:description] %>
-                </p>
-              </div>
-              
-              <!-- アクセスボタン -->
-              <div class="text-center">
-                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200">
-                  <span>アクセス</span>
-                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </div>
-              </div>
+    <!-- メインカード -->
+    <div class="max-w-md mx-auto">
+      <a href="/oracle-me" class="block">
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-8 border border-gray-100">
+          <!-- アプリアイコン -->
+          <div class="text-center mb-6">
+            <div class="text-6xl mb-4">
+              🔮
             </div>
-          </a>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-3">
+              Oracle Me
+            </h3>
+            <p class="text-gray-600">
+              オラクルカードアプリ
+            </p>
+          </div>
+          
+          <!-- アクセスボタン -->
+          <div class="text-center">
+            <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 text-lg font-medium">
+              <span>オラクルカードを始める</span>
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
         </div>
-      <% end %>
-    </div>
-
-    <!-- 新しいアプリ追加ボタン -->
-    <div class="text-center mt-12">
-      <div class="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-all duration-200">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-        </svg>
-        <span>新しいアプリを追加</span>
-      </div>
+      </a>
     </div>
 
     <!-- フッター -->
     <div class="text-center mt-16 text-gray-500 text-sm">
       <p>Powered by Rails + Render</p>
-      <p class="mt-1">コスト効率的なマルチアプリプラットフォーム</p>
+      <p class="mt-1">オラクルカードアプリ</p>
     </div>
   </div>
 </body>

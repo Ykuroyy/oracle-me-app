@@ -78,12 +78,21 @@
     <!-- アクションボタン -->
     <div class="text-center space-y-4">
       <!-- もう一度引くボタン -->
-      <%= link_to root_path, 
+      <%= link_to oracle_cards_path, 
           class: "inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg" do %>
         <span class="text-xl">🔄</span>
         もう一度引く
         <span class="text-xl">✨</span>
       <% end %>
+      
+      <!-- アプリ選択に戻るボタン -->
+      <div class="mt-4">
+        <a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-6 py-3 rounded-full font-bold shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-orange-600">
+          <span class="text-lg">🏠</span>
+          アプリを選ぶ画面に戻る
+          <span class="text-lg">🏠</span>
+        </a>
+      </div>
     </div>
 
     <!-- 今日の日付 -->

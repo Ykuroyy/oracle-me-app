@@ -1,27 +1,16 @@
 Rails.application.routes.draw do
-  # アプリ選択ページ
-  root 'application#app_selector'
+  # ルートをOracle Meにリダイレクト
+  root 'oracle_cards#index'
   
   # Oracle Me App
   scope '/oracle-me' do
     resources :oracle_cards, only: [:index, :show]
+    get '/', to: 'oracle_cards#index'
   end
   
-  # Aroma App
-  scope '/aroma' do
-    resources :aroma_cards, only: [:index, :show]
-  end
-  
-  # 新しいアプリ用のプレースホルダー
-  scope '/app3' do
-    resources :app3_cards, only: [:index, :show]
-  end
-  
-  # 動的アプリルーティング（将来の拡張用）
-  scope '/:app_name' do
-    get '/', to: 'application#dynamic_app'
-    get '/:id', to: 'application#dynamic_app_show'
-  end
+  # 動的アプリルーティング（将来の拡張用）- 最後に配置
+  get '/:app_name', to: 'application#dynamic_app', constraints: ->(req) { !req.path.start_with?('/oracle-me') }
+  get '/:app_name/:id', to: 'application#dynamic_app_show', constraints: ->(req) { !req.path.start_with?('/oracle-me') }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -30,6 +30,15 @@
       </button>
     </div>
 
+    <!-- アプリ選択に戻るボタン -->
+    <div class="text-center mb-4">
+      <a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-4 py-2 rounded-full font-bold shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm border-2 border-orange-600">
+        <span class="text-sm">🏠</span>
+        アプリを選ぶ画面に戻る
+        <span class="text-sm">🏠</span>
+      </a>
+    </div>
+
     <!-- カードグリッド -->
     <div id="card-grid" class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-4 max-w-6xl mx-auto mb-12 transition-all duration-600">
       <% @cards.each_with_index do |card_number, index| %>
@@ -285,7 +294,7 @@
         
         // さらに1秒後に結果ページに遷移
         setTimeout(() => {
-          window.location.href = `/oracle_cards/${randomCard}`;
+          window.location.href = `/oracle-me/oracle_cards/${randomCard}`;
         }, 1000);
       }, 2000);
     }

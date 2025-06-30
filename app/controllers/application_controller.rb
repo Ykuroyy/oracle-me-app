@@ -7,18 +7,6 @@ class ApplicationController < ActionController::Base
         path: '/oracle-me',
         description: 'オラクルカードアプリ',
         icon: '🔮'
-      },
-      {
-        name: 'Aroma',
-        path: '/aroma',
-        description: 'アロマアプリ',
-        icon: '🌸'
-      },
-      {
-        name: 'App 3',
-        path: '/app3',
-        description: '新しいアプリ',
-        icon: '✨'
       }
     ]
   end
@@ -29,11 +17,7 @@ class ApplicationController < ActionController::Base
     # アプリ名に基づいて適切なビューを表示
     case @app_name
     when 'oracle-me'
-      redirect_to oracle_cards_path
-    when 'aroma'
-      redirect_to aroma_cards_path
-    when 'app3'
-      redirect_to app3_cards_path
+      redirect_to '/oracle-me'
     else
       render 'application/app_not_found'
     end
@@ -45,11 +29,7 @@ class ApplicationController < ActionController::Base
     # アプリ名に基づいて適切なアクションを実行
     case @app_name
     when 'oracle-me'
-      redirect_to oracle_card_path(@id)
-    when 'aroma'
-      redirect_to aroma_card_path(@id)
-    when 'app3'
-      redirect_to app3_card_path(@id)
+      redirect_to "/oracle-me/oracle_cards/#{@id}"
     else
       render 'application/app_not_found'
     end

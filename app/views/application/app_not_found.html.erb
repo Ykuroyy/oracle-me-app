@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アプリが見つかりません</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <div class="text-center">
+      <!-- エラーアイコン -->
+      <div class="text-6xl mb-6">
+        🔍
+      </div>
+      
+      <!-- エラーメッセージ -->
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">
+        アプリが見つかりません
+      </h1>
+      
+      <p class="text-lg text-gray-600 mb-8">
+        リクエストされたアプリ「<%= @app_name %>」は存在しません。
+      </p>
+      
+      <!-- 利用可能なアプリ一覧 -->
+      <div class="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto mb-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">
+          利用可能なアプリ
+        </h2>
+        <div class="space-y-2">
+          <a href="/oracle-me" class="block text-blue-600 hover:text-blue-800 transition-colors">
+            🔮 Oracle Me App
+          </a>
+          <a href="/aroma" class="block text-blue-600 hover:text-blue-800 transition-colors">
+            🌸 Aroma App
+          </a>
+          <a href="/app3" class="block text-blue-600 hover:text-blue-800 transition-colors">
+            ✨ App 3
+          </a>
+        </div>
+      </div>
+      
+      <!-- ホームに戻るボタン -->
+      <a href="/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-200 font-medium">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+        ホームに戻る
+      </a>
+    </div>
+  </div>
+</body>
+</html> 

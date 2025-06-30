@@ -1,0 +1,2 @@
+class OracleCard < ApplicationRecord
+end

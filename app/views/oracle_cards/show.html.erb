@@ -1,0 +1,139 @@
+<div class="min-h-screen bg-gradient-to-br from-rose-50 via-purple-50 to-indigo-100 relative overflow-hidden">
+  <!-- 背景の装飾 -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 left-10 text-6xl animate-pulse">✨</div>
+    <div class="absolute top-40 right-20 text-4xl animate-pulse delay-100">🌙</div>
+    <div class="absolute bottom-40 left-20 text-5xl animate-pulse delay-200">⭐</div>
+    <div class="absolute bottom-20 right-10 text-3xl animate-pulse delay-300">💫</div>
+    <div class="absolute top-60 left-1/2 text-4xl animate-pulse delay-500">🔮</div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8 relative z-10">
+    <!-- ヘッダー -->
+    <div class="text-center mb-8">
+      <div class="inline-block relative">
+        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-rose-400 bg-clip-text text-transparent mb-4">
+          ✨ Oracle Me ✨
+        </h1>
+        <div class="absolute -top-2 -right-2 text-xl animate-pulse">🌟</div>
+      </div>
+      <p class="text-lg text-purple-700 font-medium mb-2">今日のあなたへのメッセージ</p>
+      <p class="text-sm text-purple-600 opacity-80">宇宙からの特別なメッセージをお届けします</p>
+    </div>
+
+    <!-- カード表示エリア -->
+    <div class="max-w-md mx-auto">
+      <!-- カード -->
+      <div class="relative mb-8">
+        <div class="w-full aspect-[3/4] bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500 rounded-xl shadow-2xl border-4 border-white transform transition-all duration-500 hover:scale-105 animate-card-reveal">
+          <!-- カードの装飾 -->
+          <div class="absolute inset-3 border-2 border-white/30 rounded-lg"></div>
+          <div class="absolute inset-6 border border-white/20 rounded-md"></div>
+          
+          <!-- カードの内容 -->
+          <div class="relative h-full flex flex-col items-center justify-center p-6 text-white">
+            <!-- カード番号 -->
+            <div class="absolute top-4 left-4 bg-white/20 rounded-full w-8 h-8 flex items-center justify-center backdrop-blur-sm">
+              <span class="text-sm font-bold"><%= @card_number %></span>
+            </div>
+            
+            <!-- タイトル -->
+            <h2 class="text-2xl font-bold mb-4 text-center bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+              <%= @oracle_card.title %>
+            </h2>
+            
+            <!-- 中央の装飾 -->
+            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
+              <span class="text-2xl">✨</span>
+            </div>
+            
+            <!-- 説明 -->
+            <p class="text-sm text-center mb-4 opacity-90 leading-relaxed"><%= @oracle_card.description %></p>
+            
+            <!-- メッセージ -->
+            <div class="bg-white/10 rounded-lg p-4 text-center backdrop-blur-sm border border-white/20">
+              <p class="text-sm leading-relaxed font-medium"><%= @oracle_card.message %></p>
+            </div>
+            
+            <!-- 選択したカード番号の表示 -->
+            <p class="text-sm text-center mt-4 opacity-90 leading-relaxed">
+              あなたの選んだカードは<span class="text-yellow-300 font-bold text-base"><%= @card_number %>番</span>のカードです
+            </p>
+          </div>
+          
+          <!-- キラキラエフェクト -->
+          <div class="absolute inset-0">
+            <div class="absolute top-2 left-2 text-white/60 text-xs animate-pulse">✨</div>
+            <div class="absolute top-4 right-4 text-white/60 text-xs animate-pulse delay-100">⭐</div>
+            <div class="absolute bottom-4 left-4 text-white/60 text-xs animate-pulse delay-200">💫</div>
+            <div class="absolute bottom-2 right-2 text-white/60 text-xs animate-pulse delay-300">🌟</div>
+          </div>
+        </div>
+        
+        <!-- カードの影効果 -->
+        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-4/5 h-4 bg-black/20 rounded-full blur-lg"></div>
+      </div>
+    </div>
+
+    <!-- アクションボタン -->
+    <div class="text-center space-y-4">
+      <!-- もう一度引くボタン -->
+      <%= link_to root_path, 
+          class: "inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg" do %>
+        <span class="text-xl">🔄</span>
+        もう一度引く
+        <span class="text-xl">✨</span>
+      <% end %>
+    </div>
+
+    <!-- 今日の日付 -->
+    <div class="text-center mt-8">
+      <p class="text-purple-700 text-sm font-medium">
+        <%= Date.current.strftime("%Y年%m月%d日") %> のメッセージ
+      </p>
+    </div>
+
+    <!-- 装飾的な区切り線 -->
+    <div class="flex items-center justify-center mt-8 mb-4">
+      <div class="flex items-center gap-2 text-purple-400">
+        <span>⭐</span>
+        <div class="w-16 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+        <span>💫</span>
+        <div class="w-16 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+        <span>✨</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- カード表示アニメーション -->
+<style>
+  @keyframes card-reveal {
+    0% { 
+      transform: scale(0.8) rotateY(180deg); 
+      opacity: 0; 
+    }
+    50% { 
+      transform: scale(1.1) rotateY(90deg); 
+      opacity: 0.5; 
+    }
+    100% { 
+      transform: scale(1) rotateY(0deg); 
+      opacity: 1; 
+    }
+  }
+  
+  .animate-card-reveal {
+    animation: card-reveal 1.5s ease-out;
+  }
+  
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-3px) rotate(1deg); }
+    66% { transform: translateY(-1px) rotate(-0.5deg); }
+  }
+  
+  .hover\:scale-105:hover {
+    animation: gentle-float 2s ease-in-out infinite;
+  }
+</style>

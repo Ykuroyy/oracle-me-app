@@ -1,0 +1,213 @@
+<div class="min-h-screen bg-gradient-to-br from-rose-50 via-purple-50 to-indigo-100 relative overflow-hidden">
+  <!-- 背景の装飾 -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 left-10 text-6xl animate-pulse">✨</div>
+    <div class="absolute top-40 right-20 text-4xl animate-pulse delay-100">🌙</div>
+    <div class="absolute bottom-40 left-20 text-5xl animate-pulse delay-200">⭐</div>
+    <div class="absolute bottom-20 right-10 text-3xl animate-pulse delay-300">💫</div>
+    <div class="absolute top-60 left-1/2 text-4xl animate-pulse delay-500">🔮</div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8 relative z-10">
+    <!-- ヘッダー -->
+    <div class="text-center mb-8">
+      <div class="inline-block relative">
+        <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-rose-400 bg-clip-text text-transparent mb-4">
+          ✨ Oracle Me ✨
+        </h1>
+        <div class="absolute -top-2 -right-2 text-2xl animate-pulse">🌟</div>
+      </div>
+      <p class="text-xl text-purple-700 font-medium mb-2">今日のあなたへの特別なメッセージ</p>
+      <p class="text-sm text-purple-600 opacity-80">心を静めて、直感でカードを選んでください</p>
+    </div>
+
+    <!-- シャッフルボタン -->
+    <div class="text-center mb-8">
+      <button id="shuffle-btn" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+        <span class="text-lg" id="shuffle-icon">🔀</span>
+        <span id="shuffle-text">カードをシャッフル</span>
+        <span class="text-lg">✨</span>
+      </button>
+    </div>
+
+    <!-- カードグリッド -->
+    <div id="card-grid" class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-4 max-w-6xl mx-auto mb-12 transition-all duration-600">
+      <% @cards.each_with_index do |card_number, index| %>
+        <div class="group cursor-pointer transform transition-all duration-700 hover:scale-110 hover:-translate-y-3 hover:rotate-2" 
+             data-card-number="<%= card_number %>"
+             style="transform-origin: center bottom; animation-delay: <%= index * 20 %>ms;">
+          <%= link_to oracle_card_path(card_number), class: "block" do %>
+            <div class="relative w-full aspect-[3/4] bg-gradient-to-br from-purple-400 via-pink-400 to-rose-400 border-2 border-white/50 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:border-white/80 rounded-lg">
+              <!-- カードの装飾パターン -->
+              <div class="absolute inset-2 border-2 border-white/30 rounded-lg"></div>
+              <div class="absolute inset-4 border border-white/20 rounded-md"></div>
+
+              <!-- 複雑な装飾パターン -->
+              <div class="absolute inset-6 flex items-center justify-center">
+                <div class="w-8 h-8 border border-white/30 rounded-full"></div>
+              </div>
+
+              <!-- 中央の装飾 -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="relative">
+                  <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300">
+                    <span class="text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                      🔮
+                    </span>
+                  </div>
+                  <div class="text-white text-xs font-medium text-center opacity-90 group-hover:opacity-100">
+                    Oracle
+                  </div>
+                </div>
+              </div>
+
+              <!-- 神秘的な模様 -->
+              <div class="absolute top-3 left-3 w-4 h-4 border border-white/20 rounded-full"></div>
+              <div class="absolute top-3 right-3 w-4 h-4 border border-white/20 rounded-full"></div>
+              <div class="absolute bottom-3 left-3 w-4 h-4 border border-white/20 rounded-full"></div>
+              <div class="absolute bottom-3 right-3 w-4 h-4 border border-white/20 rounded-full"></div>
+
+              <!-- キラキラエフェクト -->
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="absolute top-2 left-2 text-white/60 text-xs animate-pulse">✨</div>
+                <div class="absolute top-4 right-4 text-white/60 text-xs animate-pulse delay-100">⭐</div>
+                <div class="absolute bottom-4 left-4 text-white/60 text-xs animate-pulse delay-200">💫</div>
+                <div class="absolute bottom-2 right-2 text-white/60 text-xs animate-pulse delay-300">🌟</div>
+              </div>
+
+              <!-- ホバー時のオーバーレイ -->
+              <div class="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- 説明文 -->
+    <div class="text-center mb-8">
+      <p class="text-purple-700 text-lg font-medium mb-2">💖 直感を信じて、心に響くカードを選んでください 💖</p>
+      <p class="text-purple-600 text-sm opacity-80">宇宙があなたに送る今日のメッセージが待っています</p>
+    </div>
+
+    <!-- ランダム選択ボタン -->
+    <div class="text-center">
+      <%= link_to select_oracle_card_path(rand(34)), 
+          class: "inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg" do %>
+        <span class="text-xl">🎲</span>
+        宇宙にお任せする
+        <span class="text-xl">✨</span>
+      <% end %>
+    </div>
+
+    <!-- 装飾的な区切り線 -->
+    <div class="flex items-center justify-center mt-12 mb-8">
+      <div class="flex items-center gap-2 text-purple-400">
+        <span>⭐</span>
+        <div class="w-16 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+        <span>💫</span>
+        <div class="w-16 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+        <span>✨</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- アニメーション用スタイル -->
+<style>
+  @keyframes float-up {
+    0% { 
+      transform: scale(1) translateY(0px) rotate(0deg);
+      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+    }
+    50% { 
+      transform: scale(1.3) translateY(-40px) rotate(8deg);
+      box-shadow: 0 20px 40px rgba(168, 85, 247, 0.5);
+    }
+    100% { 
+      transform: scale(1.5) translateY(-64px) rotate(12deg);
+      box-shadow: 0 30px 60px rgba(168, 85, 247, 0.7);
+    }
+  }
+  
+  @keyframes shuffle {
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(2deg); }
+    50% { transform: translateY(-3px) rotate(-1deg); }
+    75% { transform: translateY(-7px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-3px) rotate(1deg); }
+    66% { transform: translateY(-1px) rotate(-0.5deg); }
+  }
+  
+  .animate-float-up {
+    animation: float-up 1.2s ease-out forwards;
+  }
+  
+  .animate-shuffle {
+    animation: shuffle 0.6s ease-in-out;
+  }
+  
+  .group:hover:not(.animate-float-up):not(.animate-shuffle) {
+    animation: gentle-float 2s ease-in-out infinite;
+  }
+</style>
+
+<!-- シャッフル機能のJavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const shuffleBtn = document.getElementById('shuffle-btn');
+    const shuffleIcon = document.getElementById('shuffle-icon');
+    const shuffleText = document.getElementById('shuffle-text');
+    const cardGrid = document.getElementById('card-grid');
+    const cards = Array.from(document.querySelectorAll('[data-card-number]'));
+    
+    let isShuffling = false;
+    
+    shuffleBtn.addEventListener('click', function() {
+      if (isShuffling) return;
+      
+      isShuffling = true;
+      shuffleIcon.classList.add('animate-spin');
+      shuffleText.textContent = 'シャッフル中...';
+      cardGrid.style.opacity = '0.5';
+      cardGrid.style.transform = 'scale(0.95)';
+      
+      // Fisher-Yatesアルゴリズムでシャッフル
+      const shuffledCards = [...cards];
+      for (let i = shuffledCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledCards[i], shuffledCards[j]] = [shuffledCards[j], shuffledCards[i]];
+      }
+      
+      // カードにシャッフルアニメーションを適用
+      shuffledCards.forEach((card, index) => {
+        card.classList.add('animate-shuffle');
+        card.style.animationDelay = `${index * 20}ms`;
+      });
+      
+      // アニメーション効果のために少し遅延
+      setTimeout(() => {
+        // カードの順序を実際に変更
+        shuffledCards.forEach(card => {
+          cardGrid.appendChild(card);
+        });
+        
+        // アニメーションクラスを削除
+        setTimeout(() => {
+          shuffledCards.forEach(card => {
+            card.classList.remove('animate-shuffle');
+          });
+          cardGrid.style.opacity = '1';
+          cardGrid.style.transform = 'scale(1)';
+          shuffleIcon.classList.remove('animate-spin');
+          shuffleText.textContent = 'カードをシャッフル';
+          isShuffling = false;
+        }, 600);
+      }, 600);
+    });
+  });
+</script>

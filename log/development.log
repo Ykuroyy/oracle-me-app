@@ -1935,3 +1935,539 @@ Processing by OracleCardsController#show as HTML
 Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 2597)
 
 
+Started GET "/" for ::1 at 2025-06-30 19:58:38 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2095)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 40171)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 44254)
+
+
+Started GET "/oracle_cards/5" for ::1 at 2025-06-30 19:58:48 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 5], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 556)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2386)
+Completed 200 OK in 30ms (Views: 2.1ms | ActiveRecord: 7.8ms | Allocations: 20887)
+
+
+Started GET "/oracle_cards/1" for ::1 at 2025-06-30 19:58:48 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 1], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1914)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 2607)
+
+
+Started GET "/" for ::1 at 2025-06-30 19:58:52 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3075)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3320)
+
+
+Started GET "/" for ::1 at 2025-06-30 19:59:00 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3081)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3328)
+
+
+Started GET "/oracle_cards/4" for ::1 at 2025-06-30 19:59:04 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 4], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1929)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 2612)
+
+
+Started GET "/" for ::1 at 2025-06-30 19:59:07 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3099)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3342)
+
+
+Started GET "/oracle_cards/16" for ::1 at 2025-06-30 19:59:07 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 16], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 1928)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 2608)
+
+
+Started GET "/oracle_cards/33" for ::1 at 2025-06-30 19:59:07 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mOracleCard Load (0.4ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 33], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1928)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2617)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:02:31 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2128)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 40253)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 44336)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:02:33 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3101)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3349)
+
+
+Started GET "/oracle_cards/18" for ::1 at 2025-06-30 20:02:34 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 18], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 556)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2401)
+Completed 200 OK in 34ms (Views: 5.7ms | ActiveRecord: 6.6ms | Allocations: 20902)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:02:36 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3100)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3344)
+
+
+Started GET "/oracle_cards/18" for ::1 at 2025-06-30 20:02:42 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 18], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1905)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 2598)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:02:46 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3087)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3332)
+
+
+Started GET "/oracle_cards/33" for ::1 at 2025-06-30 20:02:50 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 33], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 87)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1903)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 2592)
+
+
+Started GET "/oracle_cards/29" for ::1 at 2025-06-30 20:02:51 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 29], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1905)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 2584)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:02:56 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3076)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 3320)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:02:57 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3078)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3321)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:02:59 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3084)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3328)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:03:00 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3084)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3327)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:03:01 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3081)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3324)
+
+
+Started GET "/oracle_cards/4" for ::1 at 2025-06-30 20:03:01 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 4], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1908)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 2591)
+
+
+Started GET "/oracle_cards/6/select" for ::1 at 2025-06-30 20:03:02 +0900
+Processing by OracleCardsController#select as HTML
+  Parameters: {"id"=>"6"}
+Redirected to http://localhost:3001/oracle_cards/29
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/oracle_cards/29" for ::1 at 2025-06-30 20:03:02 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 29], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1905)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 2584)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:03:05 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3084)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3327)
+
+
+Started GET "/oracle_cards/18/select" for ::1 at 2025-06-30 20:03:08 +0900
+Processing by OracleCardsController#select as HTML
+  Parameters: {"id"=>"18"}
+Redirected to http://localhost:3001/oracle_cards/11
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 136)
+
+
+Started GET "/oracle_cards/11" for ::1 at 2025-06-30 20:03:08 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 11], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1911)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2590)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:03:16 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 3090)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 3333)
+
+
+Started GET "/oracle_cards/10/select" for ::1 at 2025-06-30 20:03:18 +0900
+Processing by OracleCardsController#select as HTML
+  Parameters: {"id"=>"10"}
+Redirected to http://localhost:3001/oracle_cards/12
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 136)
+
+
+Started GET "/oracle_cards/12" for ::1 at 2025-06-30 20:03:18 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 12], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1914)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 2594)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:03:22 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3087)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3330)
+
+
+Started GET "/oracle_cards/8" for ::1 at 2025-06-30 20:03:22 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 8], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1908)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 2587)
+
+
+Started GET "/oracle_cards/33/select" for ::1 at 2025-06-30 20:03:23 +0900
+Processing by OracleCardsController#select as HTML
+  Parameters: {"id"=>"33"}
+Redirected to http://localhost:3001/oracle_cards/25
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 136)
+
+
+Started GET "/oracle_cards/25" for ::1 at 2025-06-30 20:03:23 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 25], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1911)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 2600)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:03:25 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3081)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3325)
+
+
+Started GET "/oracle_cards/25/select" for ::1 at 2025-06-30 20:03:27 +0900
+Processing by OracleCardsController#select as HTML
+  Parameters: {"id"=>"25"}
+Redirected to http://localhost:3001/oracle_cards/20
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 136)
+
+
+Started GET "/oracle_cards/20" for ::1 at 2025-06-30 20:03:27 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 20], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1917)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 2596)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:05:07 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2198)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 39999)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 44082)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:05:10 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1221)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3067)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3315)
+
+
+Started GET "/oracle_cards/5" for ::1 at 2025-06-30 20:05:11 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 5], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 557)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2385)
+Completed 200 OK in 42ms (Views: 8.1ms | ActiveRecord: 8.9ms | Allocations: 20887)
+
+
+Started GET "/oracle_cards/24" for ::1 at 2025-06-30 20:05:11 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 24], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1916)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 2597)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:05:15 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1221)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3077)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3323)
+
+
+Started GET "/oracle_cards/27" for ::1 at 2025-06-30 20:05:22 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 27], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1917)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 2609)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:05:26 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1221)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3056)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 3299)
+
+
+Started GET "/oracle_cards/18" for ::1 at 2025-06-30 20:05:26 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mOracleCard Load (0.2ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 18], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1894)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 2583)
+
+
+Started GET "/oracle_cards/18" for ::1 at 2025-06-30 20:05:27 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 18], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1905)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 2584)
+
+
+Started GET "/oracle_cards/0" for ::1 at 2025-06-30 20:05:32 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mOracleCard Load (0.3ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 0], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1911)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2600)
+
+
+Started GET "/" for ::1 at 2025-06-30 20:05:36 +0900
+Processing by OracleCardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/index.html.erb within layouts/application
+  Rendered oracle_cards/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1221)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3053)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 3297)
+
+
+Started GET "/oracle_cards/4" for ::1 at 2025-06-30 20:05:36 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 4], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1908)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 2587)
+
+
+Started GET "/oracle_cards/25" for ::1 at 2025-06-30 20:05:37 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 25], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1896)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 2575)
+
+
+Started GET "/oracle_cards/4" for ::1 at 2025-06-30 20:05:38 +0900
+Processing by OracleCardsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOracleCard Load (0.1ms)[0m  [1m[34mSELECT "oracle_cards".* FROM "oracle_cards" WHERE "oracle_cards"."number" = $1 LIMIT $2[0m  [["number", 4], ["LIMIT", 1]]
+  ↳ app/controllers/oracle_cards_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering oracle_cards/show.html.erb within layouts/application
+  Rendered oracle_cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1908)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 2588)
+
+

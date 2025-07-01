@@ -5,8 +5,12 @@ services:
     plan: free
     buildCommand: docker build -t oracle-me-app .
     startCommand: |
-      rails db:reset
+      rails db:drop
+      rails db:create
+      rails db:migrate
+      rails db:seed
       rails assets:precompile
+      rails assets:clean
       docker run -p $PORT:3000 oracle-me-app
     envVars:
       - key: RAILS_ENV

@@ -8,8 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# 既存のデータを削除
-OracleCard.destroy_all
+# 既存のデータを削除（本番環境でも確実に実行）
+puts "🗑️ 既存のオラクルカードデータを削除中..."
+OracleCard.delete_all
+puts "✅ 既存データの削除完了"
 
 # Oracle Cards データ
 oracle_cards_data = [
@@ -50,6 +52,7 @@ oracle_cards_data = [
 ]
 
 # Oracle Cards データを作成
+puts "🔮 新しいオラクルカードデータを作成中..."
 oracle_cards_data.each do |card_data|
   OracleCard.create!(card_data)
 end

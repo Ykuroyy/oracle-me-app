@@ -4,7 +4,10 @@ services:
     runtime: docker
     plan: free
     buildCommand: docker build -t oracle-me-app .
-    startCommand: docker run -p $PORT:3000 oracle-me-app
+    startCommand: |
+      rails db:reset
+      rails assets:precompile
+      docker run -p $PORT:3000 oracle-me-app
     envVars:
       - key: RAILS_ENV
         value: production

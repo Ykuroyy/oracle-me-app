@@ -103,4 +103,34 @@
   </div>
 </div>
 
-
+<!-- カード表示アニメーション -->
+<style>
+  @keyframes card-reveal {
+    0% { 
+      transform: scale(0.8) rotateY(180deg); 
+      opacity: 0; 
+    }
+    50% { 
+      transform: scale(1.1) rotateY(90deg); 
+      opacity: 0.5; 
+    }
+    100% { 
+      transform: scale(1) rotateY(0deg); 
+      opacity: 1; 
+    }
+  }
+  
+  .animate-card-reveal {
+    animation: card-reveal 1.5s ease-out;
+  }
+  
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-3px) rotate(1deg); }
+    66% { transform: translateY(-1px) rotate(-0.5deg); }
+  }
+  
+  .hover\:scale-105:hover {
+    animation: gentle-float 2s ease-in-out infinite;
+  }
+</style>

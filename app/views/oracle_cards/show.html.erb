@@ -32,33 +32,25 @@
           
           <!-- カードの内容 -->
           <div class="relative h-full flex flex-col items-center justify-center p-6 text-white">
-            <!-- カード番号 -->
-            <div class="absolute top-4 left-4 bg-white/20 rounded-full w-8 h-8 flex items-center justify-center backdrop-blur-sm">
-              <span class="text-sm font-bold"><%= @card_number %></span>
-            </div>
-            
-            <!-- タイトル -->
-            <h2 class="text-2xl font-bold mb-4 text-center bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
-              <%= @oracle_card.title %>
+            <!-- 選んだカード番号（一番上、最大サイズ） -->
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center text-white">
+              あなたの選んだカードは
             </h2>
             
-            <!-- 中央の装飾 -->
-            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
-              <span class="text-2xl">✨</span>
+            <!-- 大きな数字（カードの中央） -->
+            <div class="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border-4 border-yellow-300 mb-6">
+              <span class="text-6xl font-bold text-yellow-300"><%= @card_number %></span>
             </div>
             
-            <!-- 説明 -->
-            <p class="text-sm text-center mb-4 opacity-90 leading-relaxed"><%= @oracle_card.description %></p>
+            <!-- タイトル（2番目に大きい） -->
+            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-center bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+              <%= @oracle_card.title %>
+            </h3>
             
-            <!-- メッセージ -->
+            <!-- メッセージ（詳細文） -->
             <div class="bg-white/10 rounded-lg p-4 text-center backdrop-blur-sm border border-white/20">
-              <p class="text-sm leading-relaxed font-medium"><%= @oracle_card.message %></p>
+              <p class="text-base leading-relaxed font-medium"><%= @oracle_card.message %></p>
             </div>
-            
-            <!-- 選択したカード番号の表示 -->
-            <p class="text-sm text-center mt-4 opacity-90 leading-relaxed">
-              あなたの選んだカードは<span class="text-yellow-300 font-bold text-base"><%= @card_number %>番</span>のカードです
-            </p>
           </div>
           
           <!-- キラキラエフェクト -->

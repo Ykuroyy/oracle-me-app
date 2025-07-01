@@ -53,8 +53,21 @@ oracle_cards_data = [
 
 # Oracle Cards データを作成
 puts "🔮 新しいオラクルカードデータを作成中..."
+created_count = 0
 oracle_cards_data.each do |card_data|
-  OracleCard.create!(card_data)
+  card = OracleCard.create!(card_data)
+  created_count += 1
+  puts "✅ カード #{card.number}: #{card.title} を作成しました"
 end
 
-puts "🔮 34枚のオラクルカードの初期データを作成しました！"
+puts "🔮 #{created_count}枚のオラクルカードの初期データを作成しました！"
+
+# 作成されたカードの確認
+total_cards = OracleCard.count
+puts "📊 データベース内の総カード数: #{total_cards}枚"
+
+if total_cards != 34
+  puts "⚠️ 警告: 期待される34枚と異なる枚数です。データベースを確認してください。"
+else
+  puts "🎉 すべてのカードが正常に作成されました！"
+end

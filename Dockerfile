@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1.4
-# Minimal Railway Dockerfile - Version 9.0
+# Minimal Railway Dockerfile - Version 10.0
 
 FROM ruby:3.2.0-slim
 
@@ -29,5 +29,14 @@ RUN useradd -m -s /bin/bash rails && \
     chown -R rails:rails /app
 USER rails
 
+# Create startup script
+RUN echo '#!/bin/bash' > /app/start.sh && \
+    echo 'echo "Starting Rails application..."' >> /app/start.sh && \
+    echo 'echo "RAILS_ENV: $RAILS_ENV"' >> /app/start.sh && \
+    echo 'echo "DATABASE_URL: ${DATABASE_URL:0:50}..."' >> /app/start.sh && \
+    echo 'bundle exec rails db:migrate' >> /app/start.sh && \
+    echo 'bundle exec rails server -b 0.0.0.0 -p 3000' >> /app/start.sh && \
+    chmod +x /app/start.sh
+
 # Start command
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+CMD ["/app/start.sh"]

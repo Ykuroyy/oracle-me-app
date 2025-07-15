@@ -1,65 +1,43 @@
 # syntax = docker/dockerfile:1.4
-# Version: 5.0 - Complete Railway Cache Bust
+# Railway Optimized Dockerfile - Version 6.0
 
-# Use a different base image to force cache invalidation
-ARG RUBY_VERSION=3.2.0
-FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim-bullseye as base
+# Use a specific Ruby version with full image
+FROM ruby:3.2.0-bullseye
 
-# Rails app lives here
-WORKDIR /rails
+# Set working directory
+WORKDIR /app
 
 # Set production environment
-ENV RAILS_ENV="production" \
-    BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development:test"
+ENV RAILS_ENV=production \
+    BUNDLE_DEPLOYMENT=1 \
+    BUNDLE_PATH=/usr/local/bundle \
+    BUNDLE_WITHOUT=development:test
 
-# Throw-away build stage to reduce size of final image
-FROM base as build
-
-# Install packages needed to build gems and assets
+# Install system dependencies
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config nodejs npm && \
+    apt-get install -y build-essential libpq-dev nodejs npm && \
     rm -rf /var/lib/apt/lists/*
 
-# Install application gems
+# Install gems
 COPY Gemfile Gemfile.lock ./
-RUN bundle config set --local without 'development test' && \
-    bundle install --jobs 4 --retry 3 && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
+RUN bundle install --jobs 4 --retry 3
 
 # Copy application code
 COPY . .
 
-# Precompile bootsnap code for faster boot times
-RUN bundle exec bootsnap precompile app/ lib/
+# Precompile assets
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
 
-# Precompiling assets for production - Railway Version 5.0
-RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rails assets:precompile
+# Create non-root user
+RUN useradd -m -s /bin/bash rails && \
+    chown -R rails:rails /app
+USER rails
 
-# Final stage for app image
-FROM base
+# Set entrypoint
+ENTRYPOINT ["/app/bin/docker-entrypoint"]
 
-# Install packages needed for deployment
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl postgresql-client && \
-    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives
-
-# Copy built artifacts: gems, application
-COPY --from=build /usr/local/bundle /usr/local/bundle
-COPY --from=build /rails /rails
-
-# Add bin directory to PATH
-ENV PATH="/rails/bin:${PATH}"
-
-# Run and own only the runtime files as a non-root user for security
-RUN useradd rails --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
-USER rails:rails
-
-# Entrypoint prepares the database.
-ENTRYPOINT ["/rails/bin/docker-entrypoint"]
-
-# Start the server by default, this can be overwritten at runtime
+# Expose port
 EXPOSE 3000
+
+# Start command
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]

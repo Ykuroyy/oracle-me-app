@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1.4
-# Simple Railway Dockerfile - Version 7.0
+# Simple Railway Dockerfile - Version 8.0
 
 FROM ruby:3.2.0-slim
 
@@ -10,7 +10,8 @@ WORKDIR /app
 ENV RAILS_ENV=production \
     BUNDLE_DEPLOYMENT=1 \
     BUNDLE_PATH=/usr/local/bundle \
-    BUNDLE_WITHOUT=development:test
+    BUNDLE_WITHOUT=development:test \
+    PATH="/app/bin:${PATH}"
 
 # Install system dependencies (minimal)
 RUN apt-get update -qq && \
@@ -23,6 +24,9 @@ RUN bundle install --jobs 4 --retry 3
 
 # Copy application code
 COPY . .
+
+# Make bin/rails executable
+RUN chmod +x bin/rails
 
 # Precompile assets (skip if fails)
 RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile || echo "Asset precompilation failed, continuing..."
@@ -39,4 +43,4 @@ ENTRYPOINT ["/app/bin/docker-entrypoint"]
 EXPOSE 3000
 
 # Start command - Railway compatible
-CMD ["sh", "-c", "bundle exec rails server -b 0.0.0.0 -p ${PORT:-3000}"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]

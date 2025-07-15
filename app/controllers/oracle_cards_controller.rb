@@ -29,13 +29,13 @@ class OracleCardsController < ApplicationController
       end
       
       # それでも見つからない場合は、デフォルトのカードを表示
-      unless @oracle_card
-        @oracle_card = OracleCard.new(
-          number: @card_number,
+    unless @oracle_card
+      @oracle_card = OracleCard.new(
+        number: @card_number,
           title: "神秘のカード",
           description: "✨ 宇宙からの特別なメッセージ ✨",
-          message: "あなたの直感を信じてください。今日は素晴らしい日になるでしょう。"
-        )
+        message: "あなたの直感を信じてください。今日は素晴らしい日になるでしょう。"
+      )
       end
     end
   end

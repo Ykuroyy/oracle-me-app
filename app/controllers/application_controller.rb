@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  # ヘルスチェック用エンドポイント
+  def health
+    render json: { status: 'ok', timestamp: Time.current }, status: :ok
+  end
   # アプリ選択ページ
   def app_selector
     @apps = [

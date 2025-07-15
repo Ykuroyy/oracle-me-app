@@ -1,4 +1,5 @@
-# syntax = docker/dockerfile:1
+# syntax = docker/dockerfile:1.4
+# Version: 4.0 - Railway Optimized with Cache Bust
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.2.0
@@ -33,7 +34,7 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-# Precompiling assets for production - Version 2.0
+# Precompiling assets for production - Railway Version 4.0
 RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rails assets:precompile
 
 # Final stage for app image

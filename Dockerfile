@@ -50,6 +50,9 @@ RUN echo '#!/bin/bash' > /app/start.sh && \
     echo 'PORT=${PORT:-3000}' >> /app/start.sh && \
     echo 'echo "Using port: $PORT"' >> /app/start.sh && \
     echo 'echo "=== Starting Rails server on port $PORT ==="' >> /app/start.sh && \
+    echo 'echo "=== Waiting for Rails to be ready ==="' >> /app/start.sh && \
+    echo 'sleep 5' >> /app/start.sh && \
+    echo 'echo "=== Rails server is ready ==="' >> /app/start.sh && \
     echo 'bundle exec rails server -b 0.0.0.0 -p $PORT' >> /app/start.sh && \
     chmod +x /app/start.sh
 

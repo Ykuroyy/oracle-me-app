@@ -34,6 +34,7 @@ RUN echo '#!/bin/bash' > /app/start.sh && \
     echo 'set -e' >> /app/start.sh && \
     echo 'echo "=== Starting Rails application ==="' >> /app/start.sh && \
     echo 'echo "RAILS_ENV: $RAILS_ENV"' >> /app/start.sh && \
+    echo 'echo "PORT: $PORT"' >> /app/start.sh && \
     echo 'echo "DATABASE_URL: ${DATABASE_URL:0:50}..."' >> /app/start.sh && \
     echo 'echo "SECRET_KEY_BASE: ${SECRET_KEY_BASE:0:20}..."' >> /app/start.sh && \
     echo 'echo "=== Checking database connection ==="' >> /app/start.sh && \
@@ -46,7 +47,9 @@ RUN echo '#!/bin/bash' > /app/start.sh && \
     echo 'echo "=== Running database migrations ==="' >> /app/start.sh && \
     echo 'bundle exec rails db:migrate' >> /app/start.sh && \
     echo 'echo "=== Starting Rails server ==="' >> /app/start.sh && \
-    echo 'bundle exec rails server -b 0.0.0.0 -p 3000' >> /app/start.sh && \
+    echo 'PORT=${PORT:-3000}' >> /app/start.sh && \
+    echo 'echo "Using port: $PORT"' >> /app/start.sh && \
+    echo 'bundle exec rails server -b 0.0.0.0 -p $PORT' >> /app/start.sh && \
     chmod +x /app/start.sh
 
 # Start command

@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:1.4
-# Minimal Railway Dockerfile - Version 11.0
+# Minimal Railway Dockerfile - Version 11.1 (Cache Buster)
 
 FROM ruby:3.2.0-slim
 

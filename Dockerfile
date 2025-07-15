@@ -1,9 +1,9 @@
 # syntax = docker/dockerfile:1.4
-# Version: 4.0 - Railway Optimized with Cache Bust
+# Version: 5.0 - Complete Railway Cache Bust
 
-# Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
+# Use a different base image to force cache invalidation
 ARG RUBY_VERSION=3.2.0
-FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
+FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim-bullseye as base
 
 # Rails app lives here
 WORKDIR /rails
@@ -34,7 +34,7 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-# Precompiling assets for production - Railway Version 4.0
+# Precompiling assets for production - Railway Version 5.0
 RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rails assets:precompile
 
 # Final stage for app image

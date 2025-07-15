@@ -2,7 +2,7 @@
 builder = "DOCKERFILE"
 
 [deploy]
-startCommand = "rails server -b 0.0.0.0 -p $PORT"
+startCommand = "bundle exec rails server -b 0.0.0.0 -p $PORT"
 healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
@@ -11,4 +11,5 @@ restartPolicyMaxRetries = 10
 [deploy.envs]
 RAILS_ENV = "production"
 RAILS_SERVE_STATIC_FILES = "true"
-RAILS_LOG_TO_STDOUT = "true" 
+RAILS_LOG_TO_STDOUT = "true"
+RAILS_MAX_THREADS = "5" 

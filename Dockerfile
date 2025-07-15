@@ -39,5 +39,5 @@ ENTRYPOINT ["/app/bin/docker-entrypoint"]
 # Expose port
 EXPOSE 3000
 
-# Start command
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+# Start command - Railway compatible
+CMD ["sh", "-c", "bundle exec rails server -b 0.0.0.0 -p ${PORT:-3000}"]

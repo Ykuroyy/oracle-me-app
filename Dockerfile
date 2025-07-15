@@ -46,6 +46,10 @@ RUN echo '#!/bin/bash' > /app/start.sh && \
     echo 'fi' >> /app/start.sh && \
     echo 'echo "=== Running database migrations ==="' >> /app/start.sh && \
     echo 'bundle exec rails db:migrate' >> /app/start.sh && \
+    echo 'echo "=== Seeding database ==="' >> /app/start.sh && \
+    echo 'bundle exec rails db:seed' >> /app/start.sh && \
+    echo 'echo "=== Precompiling assets ==="' >> /app/start.sh && \
+    echo 'bundle exec rails assets:precompile' >> /app/start.sh && \
     echo 'echo "=== Starting Rails server ==="' >> /app/start.sh && \
     echo 'PORT=${PORT:-3000}' >> /app/start.sh && \
     echo 'echo "Using port: $PORT"' >> /app/start.sh && \

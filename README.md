@@ -1,24 +1,58 @@
-# README
+# Oracle Me App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails application for Oracle card readings with a beautiful UI built with Tailwind CSS.
 
-Things you may want to cover:
+## Railway Deployment
 
-* Ruby version
+This app is configured for deployment on Railway.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+- Railway account
+- Git repository
 
-* Database creation
+### Deployment Steps
 
-* Database initialization
+1. **Connect to Railway**
+   - Go to [Railway](https://railway.app)
+   - Create a new project
+   - Connect your GitHub repository
 
-* How to run the test suite
+2. **Configure Environment Variables**
+   In Railway dashboard, add these environment variables:
+   ```
+   RAILS_ENV=production
+   RAILS_SERVE_STATIC_FILES=true
+   RAILS_LOG_TO_STDOUT=true
+   SECRET_KEY_BASE=<generate a secure key>
+   ```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. **Database Setup**
+   - Railway will automatically provision a PostgreSQL database
+   - The `DATABASE_URL` will be automatically set by Railway
 
-* Deployment instructions
+4. **Deploy**
+   - Railway will automatically build and deploy your app using the Dockerfile
+   - The app will be available at the provided Railway URL
 
-* ...
+### Local Development
+
+```bash
+# Install dependencies
+bundle install
+
+# Setup database
+rails db:create
+rails db:migrate
+rails db:seed
+
+# Start the server
+rails server
+```
+
+### Features
+
+- Oracle card readings with beautiful animations
+- Responsive design with Tailwind CSS
+- PostgreSQL database
+- Docker containerization

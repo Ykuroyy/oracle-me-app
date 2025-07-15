@@ -1,9 +1,27 @@
-#!/bin/bash -e
+#!/bin/bash
+set -e
 
-# If running the rails server then create or migrate existing database
-if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
-  ./bin/rails db:prepare
-  ./bin/rails db:seed
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /rails/tmp/pids/server.pid
+
+# Install missing gems
+bundle check || bundle install
+
+# Wait for database to be ready
+until pg_isready -h $DATABASE_HOST -p $DATABASE_PORT -U $DATABASE_USER; do
+  echo "Waiting for database..."
+  sleep 2
+done
+
+# Run database migrations
+echo "Running database migrations..."
+bundle exec rails db:migrate
+
+# Seed database if needed
+if [ "$RAILS_ENV" = "production" ]; then
+  echo "Seeding production database..."
+  bundle exec rails db:seed
 fi
 
-exec "${@}"
+# Then exec the container's main process (what's set as CMD in the Dockerfile).
+exec "$@"

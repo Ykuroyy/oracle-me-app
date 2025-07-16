@@ -48,6 +48,8 @@ RUN echo '#!/bin/bash' > /app/start.sh && \
     echo 'bundle exec rails db:migrate' >> /app/start.sh && \
     echo 'echo "=== Seeding database ==="' >> /app/start.sh && \
     echo 'bundle exec rails db:seed' >> /app/start.sh && \
+    echo 'echo "=== Building Tailwind CSS ==="' >> /app/start.sh && \
+    echo 'bundle exec rails tailwindcss:build' >> /app/start.sh && \
     echo 'echo "=== Precompiling assets ==="' >> /app/start.sh && \
     echo 'bundle exec rails assets:precompile' >> /app/start.sh && \
     echo 'echo "=== Starting Rails server ==="' >> /app/start.sh && \
